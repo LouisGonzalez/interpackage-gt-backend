@@ -214,7 +214,9 @@ public class CheckpointController {
               return new ResponseEntity("El empleado seleccionada no es un operador.", HttpStatus.BAD_REQUEST);
             
             if(type == RequestType.SAVE){
+                System.out.println(checkpoint.getOperationFee());
                 Checkpoint tempCheckpoint = checkpointService.create(checkpoint);
+
                 return ResponseEntity.created(new URI("/checkpoint/"+tempCheckpoint.getId())).body(tempCheckpoint);
             } else if (type == RequestType.UPDATE){
                 Checkpoint tempCheckpoint = checkpointService.create(checkpoint);

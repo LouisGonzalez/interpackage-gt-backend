@@ -59,7 +59,7 @@ public class QueueHandler {
                         p.setDateStart(LocalDate.now());
                         p.setRoute(route);
                         packageService.update(p, p.getId());
-                        //queueService.deletePackageOnQueue(packageOnQueue);
+                        queueService.deletePackageOnQueue(packageOnQueue);
                     }
                 }
             }
